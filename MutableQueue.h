@@ -16,44 +16,13 @@ Assignment #4  MutableQueue.h
 
 #ifndef MUTABLEQUEUE_H
 #define MUTABLEQUEUE_H
+#include "MyPair.h"
 #include <iostream>
 #include "dsexceptions.h"
 #include "QuadraticProbing.h"
 
 
 using namespace std;
-/************************ Added by Olga K.***************************************
-- Struct MyPair which will be inserted into a hash table to include
-the ability to search and remove any item in MutableQueue.
-- Struct hash allows MyPair class insertion into HashTable.
-*******************************************************************************/
-template<typename a, typename b>
-struct MyPair {
-	a key;
-	b data;
-	MyPair() {};
-	MyPair(a key, b data):key(key),data(data) {};
-	bool operator>(const MyPair<a, b>&other) const {
-		return key > other.key;
-	}
-	bool operator<(const MyPair<a, b>&other) const {
-		return key < other.key;
-	}
-	bool operator!=(const MyPair<a, b>&other) const {
-		return key != other.key&&data != other.data;
-	}
-};
-
-template<typename a, typename b>
-struct hash< MyPair<a, b> > {
-private:
-    const std::hash<a> ah;
-    const std::hash<b> bh;
-public:
-    hash() : ah(), bh() {}
-    size_t operator()(const MyPair<a, b> &p) const {
-    	return ah(p.key);
-}
 
 // Mutable Priority Queue class
 // based on the implementation of BinomialQueue.h from the book
