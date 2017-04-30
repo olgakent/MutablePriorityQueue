@@ -5,6 +5,7 @@ able to search for a specific key in the priority queue (i.e. not only the minim
 and to be able to remove a specific key (not only the minimum key).
 
 To compile and run the program on terminal type:
+
     - make all
 
 	- make runsearch100
@@ -15,9 +16,11 @@ To compile and run the program on terminal type:
     - make newinsert1000
 
 To delete executables and object file type:
+
     -  make clean
 
 Input Files:
+
             100_numbers.txt
             1000_numbers.txt
             100_test_search.txt
